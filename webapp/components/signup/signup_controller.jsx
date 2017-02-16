@@ -172,6 +172,24 @@ export default class SignupController extends React.Component {
                 </a>
             );
         }
+        
+        if (global.window.mm_config.EnableSignUpWithKeycloak === 'true') {
+            signupControls.push(
+                <a
+                    className='btn btn-custom-login btn--full keycloak'
+                    key='keycloak'
+                    href={Client.getOAuthRoute() + '/keycloak/signup' + window.location.search}
+                >
+                    <span className='icon'/>
+                    <span>
+                        <FormattedMessage
+                            id='signup.keycloak'
+                            defaultMessage='GitLab Single-Sign-On'
+                        />
+                    </span>
+                </a>
+            );
+        }
 
         if (global.window.mm_license.IsLicensed === 'true' && global.window.mm_config.EnableSignUpWithGoogle === 'true') {
             signupControls.push(

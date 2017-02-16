@@ -519,6 +519,15 @@ export default class AdminSidebar extends React.Component {
                                         />
                                     }
                                 />
+                                <AdminSidebarSection
+                                name='keycloak'
+                                title={
+                                    <FormattedMessage
+                                        id='admin.sidebar.keycloak'
+                                        defaultMessage='Keycloak'
+                                    />
+                                    }
+                                />
                                 {oauthSettings}
                                 {ldapSettings}
                                 {samlSettings}

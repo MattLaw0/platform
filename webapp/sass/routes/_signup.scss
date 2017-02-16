@@ -247,6 +247,22 @@
                 }
             }
 
+            &.keycloak {
+                background: #32C5E8;
+
+                &:hover {
+                    background: darken(#32C5E8, 10%);
+                }
+
+                span {
+                    vertical-align: middle;
+                }
+
+                .icon {
+                    background-image: url('../images/keycloakLogo.png');
+                }
+            }
+
             &.google {
                 background: #dd4b39;
 

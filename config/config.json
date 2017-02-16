@@ -1,7 +1,7 @@
 {
     "ServiceSettings": {
         "SiteURL": "",
-        "ListenAddress": ":8065",
+        "ListenAddress": ":8066",
         "ConnectionSecurity": "",
         "TLSCertFile": "",
         "TLSKeyFile": "",
@@ -21,7 +21,7 @@
         "EnablePostUsernameOverride": false,
         "EnablePostIconOverride": false,
         "EnableTesting": false,
-        "EnableDeveloper": false,
+        "EnableDeveloper": true,
         "EnableSecurityFixAlert": true,
         "EnableInsecureOutgoingConnections": false,
         "EnableMultifactorAuthentication": false,
@@ -41,7 +41,6 @@
         "PostEditTimeLimit": 300,
         "TimeBetweenUserTypingUpdatesMilliseconds": 5000,
         "EnableUserTypingMessages": true,
-        "EnableUserTypingMessages": true,
         "ClusterLogTimeoutMilliseconds": 2000
     },
     "TeamSettings": {
@@ -56,15 +55,15 @@
         "CustomDescriptionText": "",
         "RestrictDirectMessage": "any",
         "RestrictTeamInvite": "all",
-        "RestrictPublicChannelCreation": "all",
-        "RestrictPrivateChannelCreation": "all",
         "RestrictPublicChannelManagement": "all",
         "RestrictPrivateChannelManagement": "all",
+        "RestrictPublicChannelCreation": "all",
+        "RestrictPrivateChannelCreation": "all",
         "RestrictPublicChannelDeletion": "all",
         "RestrictPrivateChannelDeletion": "all",
         "UserStatusAwayTimeout": 300,
         "MaxChannelsPerTeam": 2000,
-        "MaxNotificationsPerChannel": 1000
+        "MaxNotificationsPerChannel": 1000000
     },
     "SqlSettings": {
         "DriverName": "mysql",
@@ -73,7 +72,7 @@
         "MaxIdleConns": 20,
         "MaxOpenConns": 300,
         "Trace": false,
-        "AtRestEncryptKey": ""
+        "AtRestEncryptKey": "pfywz3hk6cyi5bukz3tsocpnz3eetynp"
     },
     "LogSettings": {
         "EnableConsole": true,
@@ -97,7 +96,7 @@
         "DriverName": "local",
         "Directory": "./data/",
         "EnablePublicLink": false,
-        "PublicLinkSalt": "",
+        "PublicLinkSalt": "fpi479f8pf54wtqnupqhig9gtdhs8wa5",
         "ThumbnailWidth": 120,
         "ThumbnailHeight": 100,
         "PreviewWidth": 1024,
@@ -126,8 +125,8 @@
         "SMTPServer": "dockerhost",
         "SMTPPort": "2500",
         "ConnectionSecurity": "",
-        "InviteSalt": "",
-        "PasswordResetSalt": "",
+        "InviteSalt": "yf5ugapaxeqqm98ky6mxmg77wbx4ydhg",
+        "PasswordResetSalt": "ebsu5au8up9p47iis8ijyyyc7yc9dkxx",
         "SendPushNotifications": false,
         "PushNotificationServer": "",
         "PushNotificationContents": "generic",
@@ -181,6 +180,15 @@
         "AuthEndpoint": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize",
         "TokenEndpoint": "https://login.microsoftonline.com/common/oauth2/v2.0/token",
         "UserApiEndpoint": "https://graph.microsoft.com/v1.0/me"
+    },
+    "KeycloakSettings": {
+        "Enable": false,
+        "Secret": "",
+        "Id": "",
+        "Scope": "",
+        "AuthEndpoint": "",
+        "TokenEndpoint": "",
+        "UserApiEndpoint": ""
     },
     "LdapSettings": {
         "Enable": false,

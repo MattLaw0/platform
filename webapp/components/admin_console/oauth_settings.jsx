@@ -22,6 +22,7 @@ export default class OAuthSettings extends AdminSettings {
         this.renderOffice365 = this.renderOffice365.bind(this);
         this.renderGoogle = this.renderGoogle.bind(this);
         this.renderGitLab = this.renderGitLab.bind(this);
+        this.renderKeycloak = this.renderKeycloak.bind(this);
         this.changeType = this.changeType.bind(this);
     }
 
@@ -288,6 +289,103 @@ export default class OAuthSettings extends AdminSettings {
                         <FormattedMessage
                             id='admin.gitlab.clientIdDescription'
                             defaultMessage='Obtain this value via the instructions above for logging into GitLab'
+                        />
+                    }
+                    value={this.state.id}
+                    onChange={this.handleChange}
+                />
+                <TextSetting
+                    id='secret'
+                    label={
+                        <FormattedMessage
+                            id='admin.gitlab.clientSecretTitle'
+                            defaultMessage='Application Secret Key:'
+                        />
+                    }
+                    placeholder={Utils.localizeMessage('admin.gitlab.clientSecretExample', 'Ex "jcuS8PuvcpGhpgHhlcpT1Mx42pnqMxQY"')}
+                    helpText={
+                        <FormattedMessage
+                            id='admin.gitab.clientSecretDescription'
+                            defaultMessage='Obtain this value via the instructions above for logging into GitLab.'
+                        />
+                    }
+                    value={this.state.secret}
+                    onChange={this.handleChange}
+                />
+                <TextSetting
+                    id='userApiEndpoint'
+                    label={
+                        <FormattedMessage
+                            id='admin.gitlab.userTitle'
+                            defaultMessage='User API Endpoint:'
+                        />
+                    }
+                    placeholder={Utils.localizeMessage('admin.gitlab.userExample', 'Ex "https://<your-gitlab-url>/api/v3/user"')}
+                    helpText={
+                        <FormattedMessage
+                            id='admin.gitlab.userDescription'
+                            defaultMessage='Enter https://<your-gitlab-url>/api/v3/user.   Make sure you use HTTP or HTTPS in your URL depending on your server configuration.'
+                        />
+                    }
+                    value={this.state.userApiEndpoint}
+                    onChange={this.handleChange}
+                />
+                <TextSetting
+                    id='authEndpoint'
+                    label={
+                        <FormattedMessage
+                            id='admin.gitlab.authTitle'
+                            defaultMessage='Auth Endpoint:'
+                        />
+                    }
+                    placeholder={Utils.localizeMessage('admin.gitlab.authExample', 'Ex "https://<your-gitlab-url>/oauth/authorize"')}
+                    helpText={
+                        <FormattedMessage
+                            id='admin.gitlab.authDescription'
+                            defaultMessage='Enter https://<your-gitlab-url>/oauth/authorize (example https://example.com:3000/oauth/authorize).   Make sure you use HTTP or HTTPS in your URL depending on your server configuration.'
+                        />
+                    }
+                    value={this.state.authEndpoint}
+                    onChange={this.handleChange}
+                />
+                <TextSetting
+                    id='tokenEndpoint'
+                    label={
+                        <FormattedMessage
+                            id='admin.gitlab.tokenTitle'
+                            defaultMessage='Token Endpoint:'
+                        />
+                    }
+                    placeholder={Utils.localizeMessage('admin.gitlab.tokenExample', 'Ex "https://<your-gitlab-url>/oauth/token"')}
+                    helpText={
+                        <FormattedMessage
+                            id='admin.gitlab.tokenDescription'
+                            defaultMessage='Enter https://<your-gitlab-url>/oauth/token.   Make sure you use HTTP or HTTPS in your URL depending on your server configuration.'
+                        />
+                    }
+                    value={this.state.tokenEndpoint}
+                    onChange={this.handleChange}
+                />
+            </div>
+        );
+    }
+    
+    renderKeycloak() {
+        return (
+            <div>
+                <TextSetting
+                    id='id'
+                    label={
+                        <FormattedMessage
+                            id='admin.gitlab.clientIdTitle'
+                            defaultMessage='Application ID:'
+                        />
+                    }
+                    placeholder={Utils.localizeMessage('admin.gitlab.clientIdExample', 'Ex "jcuS8PuvcpGhpgHhlcpT1Mx42pnqMxQY"')}
+                    helpText={
+                        <FormattedMessage
+                            id='admin.gitlab.clientIdDescription'
+                            defaultMessage='Obtain this value via the instructions above for logging into Keycloak'
                         />
                     }
                     value={this.state.id}

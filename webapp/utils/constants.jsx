@@ -348,6 +348,7 @@ export const Constants = {
     OFFTOPIC_CHANNEL_UI_NAME: 'Off-Topic',
     GITLAB_SERVICE: 'gitlab',
     GOOGLE_SERVICE: 'google',
+    KEYCLOAK_SERVICE: 'keycloak',
     OFFICE365_SERVICE: 'office365',
     EMAIL_SERVICE: 'email',
     LDAP_SERVICE: 'ldap',

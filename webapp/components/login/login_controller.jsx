@@ -291,6 +291,7 @@ export default class LoginController extends React.Component {
     checkSignUpEnabled() {
         return global.window.mm_config.EnableSignUpWithEmail === 'true' ||
             global.window.mm_config.EnableSignUpWithGitLab === 'true' ||
+            global.window.mm_config.EnableSignUpWithKeycloak === 'true' ||
             global.window.mm_config.EnableSignUpWithOffice365 === 'true' ||
             global.window.mm_config.EnableSignUpWithGoogle === 'true' ||
             global.window.mm_config.EnableLdap === 'true' ||
@@ -348,6 +349,7 @@ export default class LoginController extends React.Component {
 
         const ldapEnabled = this.state.ldapEnabled;
         const gitlabSigninEnabled = global.window.mm_config.EnableSignUpWithGitLab === 'true';
+        const keycloakSigninEnabled = global.window.mm_config.EnableSignUpWithKeycloak === 'true';
         const googleSigninEnabled = global.window.mm_config.EnableSignUpWithGoogle === 'true';
         const office365SigninEnabled = global.window.mm_config.EnableSignUpWithOffice365 === 'true';
         const samlSigninEnabled = this.state.samlEnabled;
@@ -465,7 +467,7 @@ export default class LoginController extends React.Component {
             );
         }
 
-        if ((emailSigninEnabled || usernameSigninEnabled || ldapEnabled) && (gitlabSigninEnabled || googleSigninEnabled || samlSigninEnabled || office365SigninEnabled)) {
+        if ((emailSigninEnabled || usernameSigninEnabled || ldapEnabled) && (gitlabSigninEnabled || keycloakSigninEnabled || googleSigninEnabled || samlSigninEnabled || office365SigninEnabled)) {
             loginControls.push(
                 <div
                     key='divider'
@@ -500,6 +502,24 @@ export default class LoginController extends React.Component {
                         <FormattedMessage
                             id='login.gitlab'
                             defaultMessage='GitLab'
+                        />
+                    </span>
+                </a>
+            );
+        }
+
+        if (keycloakSigninEnabled) {
+            loginControls.push(
+                <a
+                    className='btn btn-custom-login keycloak'
+                    key='keycloak'
+                    href={Client.getOAuthRoute() + '/keycloak/login' + this.props.location.search}
+                >
+                    <span className='icon'/>
+                    <span>
+                        <FormattedMessage
+                            id='login.keycloak'
+                            defaultMessage='Keycloak'
                         />
                     </span>
                 </a>

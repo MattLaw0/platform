@@ -26,6 +26,7 @@ const (
 
 	SERVICE_GITLAB    = "gitlab"
 	SERVICE_GOOGLE    = "google"
+	SERVICE_KEYCLOAK  = "keycloak"
 	SERVICE_OFFICE365 = "office365"
 
 	WEBSERVER_MODE_REGULAR  = "regular"
@@ -357,6 +358,7 @@ type Config struct {
 	GitLabSettings       SSOSettings
 	GoogleSettings       SSOSettings
 	Office365Settings    SSOSettings
+	KeycloakSettings     SSOSettings
 	LdapSettings         LdapSettings
 	ComplianceSettings   ComplianceSettings
 	LocalizationSettings LocalizationSettings
@@ -385,6 +387,8 @@ func (o *Config) GetSSOService(service string) *SSOSettings {
 		return &o.GoogleSettings
 	case SERVICE_OFFICE365:
 		return &o.Office365Settings
+	case SERVICE_KEYCLOAK:
+		return &o.KeycloakSettings
 	}
 
 	return nil

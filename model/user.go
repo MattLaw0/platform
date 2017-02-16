@@ -397,6 +397,9 @@ func (u *User) IsOAuthUser() bool {
 	if u.AuthService == USER_AUTH_SERVICE_GITLAB {
 		return true
 	}
+	if u.AuthService == USER_AUTH_SERVICE_KEYCLOAK {
+		return true
+	}
 	return false
 }
 
